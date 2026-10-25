@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glow Studio – Hair, Skin & Nails</title>
+<meta name="description" content="Glow Studio is a friendly neighbourhood salon for haircuts, colour, facials and nails. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2b1740;
+  --plum-soft:#5a4770;
+  --mist:#f6f0fa;
+  --lilac:#e6d9f4;
+  --rose:#d93d6e;
+  --rose-dark:#b82d5a;
+  --peach:#ffd8c9;
+  --white:#fff;
+  --wa:#1fa855;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--plum);background:var(--mist);line-height:1.6;font-size:1.0625rem}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0}
+h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:1rem}
+p{margin:0 0 1rem;max-width:62ch}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(246,240,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--lilac)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;gap:1rem}
+.logo{font-family:var(--display);font-weight:600;font-size:1.4rem;text-decoration:none}
+.nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;font-size:.98rem}
+.nav ul a:hover{color:var(--rose)}
+@media(max-width:640px){.nav ul{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.5rem;border-radius:999px;font:700 1rem var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,transform .15s}
+.btn:active{transform:scale(.98)}
+.btn-rose{background:var(--rose);color:var(--white)}
+.btn-rose:hover{background:var(--rose-dark)}
+.btn-line{border-color:var(--plum);color:var(--plum)}
+.btn-line:hover{background:var(--plum);color:var(--white)}
+.btn-wa{background:var(--wa);color:var(--white)}
+.btn-wa:hover{background:#178a46}
+.btn svg{width:1.25rem;height:1.25rem;fill:currentColor}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--plum);color:var(--white);padding:clamp(4rem,12vw,8rem) 0 clamp(4rem,10vw,6.5rem)}
+.hero::before{content:"";position:absolute;width:min(760px,150vw);aspect-ratio:1;right:-18%;top:50%;transform:translateY(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,216,201,.85) 0%,rgba(217,61,110,.45) 38%,rgba(43,23,64,0) 68%);animation:glow 6s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.65;transform:translateY(-50%) scale(.94)}to{opacity:1;transform:translateY(-50%) scale(1.05)}}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(3rem,13vw,7.5rem);letter-spacing:-.02em}
+.hero p{font-size:clamp(1.1rem,2.6vw,1.35rem);color:var(--lilac);margin:1.4rem 0 2rem;max-width:34ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero .btn-line{border-color:var(--white);color:var(--white)}
+.hero .btn-line:hover{background:var(--white);color:var(--plum)}
+
+section{padding:clamp(3.5rem,9vw,6rem) 0}
+
+/* services */
+.services-grid{display:grid;gap:2.5rem 4rem;grid-template-columns:1fr}
+@media(min-width:800px){.services-grid{grid-template-columns:1fr 1fr}}
+.menu h3{font-size:1.5rem;margin-bottom:.8rem;padding-bottom:.6rem;border-bottom:2px solid var(--plum)}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{display:flex;align-items:baseline;gap:.6rem;padding:.55rem 0}
+.menu li span.name{font-weight:500}
+.menu li small{display:block;color:var(--plum-soft);font-size:.88rem;font-weight:400}
+.menu li i{flex:1;border-bottom:2px dotted var(--lilac);min-width:1rem;transform:translateY(-.3rem)}
+.menu li b{font-weight:700;white-space:nowrap}
+.note{margin-top:2rem;color:var(--plum-soft);font-size:.95rem}
+
+/* about */
+.about{background:var(--lilac)}
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:800px){.about-grid{grid-template-columns:1.1fr .9fr}}
+.facts{display:grid;gap:1rem}
+.facts div{background:var(--white);padding:1.2rem 1.4rem;border-radius:1.2rem}
+.facts strong{display:block;font-family:var(--display);font-size:1.25rem;margin-bottom:.15rem}
+.facts span{color:var(--plum-soft);font-size:.97rem}
+
+/* gallery */
+.gallery{display:grid;gap:.8rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:800px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.ph{aspect-ratio:1;border-radius:1.2rem;display:grid;place-items:center;text-align:center;padding:1rem;font-size:.92rem;font-weight:500;color:var(--plum-soft);border:2px dashed var(--plum-soft)}
+.ph:nth-child(1){background:var(--peach)}
+.ph:nth-child(2){background:var(--lilac)}
+.ph:nth-child(3){background:#f8c9d9}
+.ph:nth-child(4){background:#d9e8f5}
+.ph:nth-child(5){background:#f8c9d9}
+.ph:nth-child(6){background:var(--peach)}
+.ph:nth-child(7){background:#d9e8f5}
+.ph:nth-child(8){background:var(--lilac)}
+@media(min-width:800px){.ph:nth-child(1),.ph:nth-child(6){grid-row:span 1;aspect-ratio:1}}
+
+/* contact */
+.contact{background:var(--plum);color:var(--white)}
+.contact h2{color:var(--white)}
+.contact-grid{display:grid;gap:2.5rem}
+@media(min-width:800px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact p,.contact dd{color:var(--lilac)}
+.contact dl{margin:0 0 1.8rem}
+.contact dt{font-family:var(--display);font-size:1.15rem;margin-top:1rem}
+.contact dd{margin:0}
+.contact .actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.contact .btn-line{border-color:var(--white);color:var(--white)}
+.contact .btn-line:hover{background:var(--white);color:var(--plum)}
+.map{min-height:260px;border-radius:1.2rem;background:rgba(255,255,255,.08);border:2px dashed rgba(255,255,255,.4);display:grid;place-items:center;text-align:center;padding:1.5rem}
+.map p{margin:0 auto 1rem;color:var(--lilac)}
+
+footer{padding:1.6rem 0;text-align:center;font-size:.92rem;color:var(--plum-soft)}
+
+/* floating whatsapp (mobile) */
+.fab{position:fixed;right:1rem;bottom:1rem;z-index:30;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.fab svg{width:1.8rem;height:1.8rem;fill:#fff}
+@media(min-width:800px){.fab{display:none}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero::before{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Glow Studio</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-rose" href="#contact" style="padding:.6rem 1.1rem;font-size:.95rem">Book now</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Glow<br>Studio</h1>
+      <p>Haircuts, colour, facials and nails in one calm, friendly space.</p>
+      <div class="actions">
+        <a class="btn btn-wa" href="https://wa.me/919999999999?text=Hi%20Glow%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>
+          Book on WhatsApp
+        </a>
+        <a class="btn btn-line" href="#services">See services and prices</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Services and prices</h2>
+      <p>Simple pricing, no surprises. Final price may vary with hair length and thickness.</p>
+      <div class="services-grid">
+        <div class="menu">
+          <h3>Hair</h3>
+          <ul>
+            <li><span class="name">Haircut and styling</span><i></i><b>₹500</b></li>
+            <li><span class="name">Kids' haircut<small>Under 10 years</small></span><i></i><b>₹300</b></li>
+            <li><span class="name">Hair spa<small>Deep conditioning and massage</small></span><i></i><b>₹1,200</b></li>
+            <li><span class="name">Global colour<small>From roots to tips</small></span><i></i><b>₹2,500</b></li>
+            <li><span class="name">Highlights<small>Per section</small></span><i></i><b>₹1,800</b></li>
+            <li><span class="name">Keratin smoothing</span><i></i><b>₹4,500</b></li>
+          </ul>
+        </div>
+        <div class="menu">
+          <h3>Skin</h3>
+          <ul>
+            <li><span class="name">Classic cleanup</span><i></i><b>₹800</b></li>
+            <li><span class="name">Hydrating facial</span><i></i><b>₹1,500</b></li>
+            <li><span class="name">De-tan treatment</span><i></i><b>₹1,000</b></li>
+            <li><span class="name">Threading<small>Eyebrows and upper lip</small></span><i></i><b>₹100</b></li>
+            <li><span class="name">Full-arm waxing</span><i></i><b>₹450</b></li>
+          </ul>
+        </div>
+        <div class="menu">
+          <h3>Nails</h3>
+          <ul>
+            <li><span class="name">Classic manicure</span><i></i><b>₹600</b></li>
+            <li><span class="name">Classic pedicure</span><i></i><b>₹800</b></li>
+            <li><span class="name">Gel polish</span><i></i><b>₹900</b></li>
+            <li><span class="name">Nail art<small>Per nail, simple designs</small></span><i></i><b>₹50</b></li>
+          </ul>
+        </div>
+        <div class="menu">
+          <h3>Bridal and party</h3>
+          <ul>
+            <li><span class="name">Party makeup</span><i></i><b>₹2,500</b></li>
+            <li><span class="name">Hairstyle for events</span><i></i><b>₹1,000</b></li>
+            <li><span class="name">Bridal package<small>Trial included. Call for details.</small></span><i></i><b>₹15,000</b></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Prices are sample figures. Replace them with your own.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>A salon that feels like a good mood</h2>
+        <p>Glow Studio started with a simple idea: a salon visit should leave you feeling better than a great haircut alone can. Our stylists listen first, then suggest what suits your hair, skin and routine.</p>
+        <p>We use trusted professional products, keep every tool clean, and never rush an appointment. Walk in tired, walk out glowing.</p>
+        <a class="btn btn-rose" href="#contact">Book your visit</a>
+      </div>
+      <div class="facts">
+        <div><strong>Trained stylists</strong><span>Certified in cutting, colour and skincare.</span></div>
+        <div><strong>Clean, safe tools</strong><span>Sanitised after every client.</span></div>
+        <div><strong>Appointments on time</strong><span>Book a slot and we keep it.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <h2>Our work</h2>
+      <p>Add your own photos here. Replace each tile with an &lt;img&gt; tag.</p>
+      <div class="gallery">
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: haircut</div>
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: colour</div>
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: facial</div>
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: nails</div>
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: bridal</div>
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: salon interior</div>
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: styling</div>
+        <div class="ph" role="img" aria-label="Photo placeholder">Photo: team</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Book your appointment</h2>
+        <p>Message us on WhatsApp with the service and a time that works. We usually reply within an hour during opening hours.</p>
+        <dl>
+          <dt>Address</dt>
+          <dd>Shop 12, Main Market Road,<br>Your City, State 000000</dd>
+          <dt>Hours</dt>
+          <dd>Monday to Saturday, 10:00 am to 8:00 pm<br>Sunday, 11:00 am to 6:00 pm</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+919999999999">+91 99999 99999</a></dd>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-wa" href="https://wa.me/919999999999?text=Hi%20Glow%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a class="btn btn-line" href="tel:+919999999999">Call us</a>
+        </div>
+      </div>
+      <div class="map">
+        <div>
+          <p>Add your Google Maps link or embed code here.</p>
+          <a class="btn btn-line" href="https://maps.google.com/?q=YOUR+SALON+ADDRESS" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Glow Studio. All rights reserved.</div>
+</footer>
+
+<a class="fab" href="https://wa.me/919999999999" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>
+</a>
+
+</body>
+</html>
